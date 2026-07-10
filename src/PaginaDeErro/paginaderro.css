@@ -1,0 +1,46 @@
+.error-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg,#F19601, #EBC83A);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #E21E26;
+  text-align: center;
+  padding: 20px;
+}
+
+.error-code {
+  font-size: 8rem;
+  font-weight: bold;
+  margin: 0;
+  color: #E21E26; /* Vermelho */
+}
+
+.error-title {
+  font-size: 2rem;
+  margin: 10px 0;
+  color: #ececec; /* Laranja */
+}
+
+.error-text {
+  font-size: 1.1rem;
+  max-width: 400px;
+  margin-bottom: 30px;
+  color: #251819; /* Preto */
+}
+
+.error-button {
+  text-decoration: none;
+  background-color: #f8f5e8; /* Amarelo */
+  color: #251819;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: bold;
+
+}
+
+.error-button:hover {
+  background-color: #F19601; /* Laranja */
+  color: #ffffff;
+}

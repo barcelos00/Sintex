@@ -1,0 +1,125 @@
+.footer {
+    width: 100%;
+    background: #251819;
+    color: #ffffff;
+    border-top: 3px solid #F19601;
+    box-shadow: 0 -4px 12px rgba(226, 30, 38, 0.15);
+}
+
+.footerContent {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 32px;
+    padding: 40px 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footerSection {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footerSection h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0;
+    color: #F19601;
+}
+
+.footerSection h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0;
+    color: #f8f5e8;
+}
+
+.footerSection p {
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #ccbebe;
+}
+
+.footerSection ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.footerSection a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.18s ease, transform 0.18s ease;
+    width: fit-content;
+}
+
+.footerSection a:hover {
+    color: #F19601;
+    transform: translateX(4px);
+}
+
+.socialLinks {
+    display: flex;
+    gap: 12px;
+}
+
+.socialLinks a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 12px;
+    background: rgba(241, 150, 1, 0.15);
+    border-radius: 6px;
+    color: #F19601;
+    transition: background 0.18s ease, color 0.18s ease, transform 0.18s ease;
+}
+
+.socialLinks a:hover {
+    background: #F19601;
+    color: #251819;
+    transform: translateY(-2px);
+}
+
+.footerBottom {
+    text-align: center;
+    padding: 16px 24px;
+    border-top: 1px solid rgba(241, 150, 1, 0.2);
+    font-size: 0.85rem;
+    color: #ccbebe;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.footerBottom p {
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .footerContent {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+        padding: 32px 16px;
+    }
+
+    .footerSection h3 {
+        font-size: 1.25rem;
+    }
+
+    .footerBottom {
+        font-size: 0.8rem;
+        padding: 12px 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .footerContent {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 24px 12px;
+    }
+}

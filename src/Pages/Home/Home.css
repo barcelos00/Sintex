@@ -1,0 +1,426 @@
+/* Mantive o início do seu CSS igual */
+.ClientPage {
+  padding: 24px;
+  min-height: calc(100vh - 80px);
+  background: var(--page-bg);
+}
+
+.ClientHeader {
+  max-width: 960px;
+  margin: 0 auto 24px;
+  padding: 28px 24px;
+  background: #F19601;
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  box-shadow: var(--shadow);
+}
+
+.ClientHeader h1 {
+  margin: 0 0 10px;
+  color: var(--text);
+}
+
+.ClientHeader p {
+  margin: 0;
+  color: white;
+}
+
+.ClientList {
+  max-width: 960px;
+  margin: 0 auto;
+  display: grid;
+  gap: 18px;
+}
+
+.SearchInfo {
+  margin: 0;
+  color: var(--muted-strong);
+  font-weight: 600;
+}
+
+.EmptyState {
+  background: var(--surface-soft);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 24px;
+  color: var(--muted);
+}
+
+/* --- NOVO VISUAL DOS CARTÕES --- */
+
+.ClientCard {
+  position: relative;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  /* overflow: hidden é crucial para a imagem não vazar das bordas arredondadas */
+  overflow: hidden; 
+  box-shadow: var(--shadow);
+  z-index: 0;
+}
+
+/* O Header agora é o banner com a imagem */
+.ClientCardHeader {
+  width: 100%;
+  height: 250px; /* Você pode mudar a altura se quiser o banner mais fino ou mais grosso */
+  
+  /* AS TRÊS LINHAS MÁGICAS: */
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat;
+  
+  position: relative;
+  border-top-left-radius: 8px; /* Mantém as bordas arredondadas */
+  border-top-right-radius: 8px;
+  overflow: hidden;
+}
+
+/* O degradê escuro da esquerda para a direita para leitura do texto */
+.HeaderOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.4) 60%, rgba(0, 0, 0, 0.1) 100%);
+  z-index: 1;
+}
+
+/* O conteúdo por cima do overlay */
+.HeaderContent {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+/* Textos sempre brancos por causa do fundo escuro da foto */
+.HeaderInfo h2 {
+  margin: 0;
+  color: #ffffff; 
+  font-size: 1.6rem;
+}
+
+.HeaderInfo p {
+  margin: 6px 0 0;
+  color: #e0e0e0;
+  font-size: 0.95rem;
+}
+
+/* Botão Laranja igual ao do mockup */
+.ActionBtn {
+  border: none;
+  background: #F19601;
+  color: #1a1a1a;
+  padding: 12px 24px;
+  border-radius: 999px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.16s ease, background 0.16s ease;
+}
+
+.FavoriteBtn {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  z-index: 3;
+  transition: transform 0.16s ease, background 0.16s ease, box-shadow 0.16s ease;
+}
+
+.FavoriteBtn:hover {
+  background: rgba(255, 255, 255, 0.28);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
+}
+
+.FavoriteStarIcon {
+  color: #ffffff;
+  font-size: 1.55rem;
+  line-height: 1;
+  transition: color 0.16s ease;
+}
+
+.FavoriteBtn:hover .FavoriteStarIcon {
+  color: #facc15;
+}
+
+.ActionBtn:hover {
+  background: #d68500;
+  transform: translateY(-2px);
+}
+
+/* Estilo específico apenas para o botão de mapa */
+.ActionBtn.MapLink {
+  background: #0f766e;
+  color: #ffffff;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ActionBtn.MapLink:hover {
+  background: #0d5a54;
+}
+
+/* --- DETALHES E MENU --- */
+
+.ClientDetails {
+  padding: 24px;
+  background: var(--surface);
+}
+
+.Description {
+  margin: 0 0 14px;
+  color: var(--muted-strong);
+  line-height: 1.7;
+}
+
+.ClientMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 18px;
+  color: var(--muted);
+}
+
+.ClientMenu h3 {
+  margin: 0 0 12px;
+  color: var(--text);
+}
+
+.ClientMenu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 12px;
+}
+
+.ClientMenu li {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px;
+  border-radius: 14px;
+  background: var(--surface-soft); /* Ajustado para dar leve contraste */
+  border: 1px solid var(--border-soft);
+}
+
+.ClientMenu li span:first-child {
+  font-weight: 600;
+}
+
+.DetailTabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.TabBtn {
+  border: none;
+  border-radius: 999px;
+  padding: 10px 18px;
+  background: #f0f4f8;
+  color: #334155;
+  cursor: pointer;
+  font-weight: 700;
+  transition: all 0.16s ease;
+}
+
+.TabBtn.active {
+  background: #0f766e;
+  color: #ffffff;
+}
+
+.FeedbackList {
+  display: grid;
+  gap: 14px;
+}
+
+.FeedbackItem {
+  padding: 16px;
+  border-radius: 18px;
+  background: #f8fafc;
+  border: 1px solid #cbd5e1;
+}
+
+.FeedbackHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.FeedbackForm {
+  display: grid;
+  gap: 16px;
+  padding: 20px 0;
+}
+
+.FormGroup {
+  display: grid;
+  gap: 8px;
+}
+
+.FormGroup input,
+.FormGroup select,
+.FormGroup textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 14px;
+  border: 1px solid #cbd5e1;
+  background: #ffffff;
+  color: #0f172a;
+}
+
+.FormGroup input:focus,
+.FormGroup select:focus,
+.FormGroup textarea:focus {
+  outline: none;
+  border-color: #0f766e;
+  box-shadow: 0 0 0 3px rgba(6, 95, 110, 0.12);
+}
+
+.SubmitFeedbackBtn {
+  border: none;
+  border-radius: 999px;
+  padding: 12px 20px;
+  background: #0f766e;
+  color: #ffffff;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.16s ease;
+}
+
+.SubmitFeedbackBtn:hover {
+  transform: translateY(-2px);
+}
+
+/* Responsividade */
+@media (max-width: 760px) {
+  .HeaderContent {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  .ActionBtn {
+    width: 100%;
+  }
+}
+
+
+
+
+.location-button {
+  display: inline-block;
+  margin-top: 16px;
+  padding: 12px 20px;
+  background-color: #f06524;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.location-button:hover {
+  background-color: #a18c23;
+}
+
+/* =========================================================
+   DASHBOARD E CARROSSEL DE FEEDBACKS
+   ========================================================= */
+
+/* Grid do Dashboard (Admin) */
+.DashboardGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.DashCard {
+  background-color: #f8f9fa;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+  border-left: 4px solid #ccc;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.DashCard h4 {
+  margin: 0 0 10px 0;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.DashValue {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.DashCard.positive { border-left-color: #28a745; }
+.DashCard.negative { border-left-color: #dc3545; }
+
+/* O Carrossel CSS Nativo */
+.CommentsCarousel {
+  display: flex;
+  overflow-x: auto;
+  gap: 15px;
+  padding-bottom: 15px;
+  margin-top: 15px;
+  /* Isso faz o scroll parar certinho no card (efeito carrossel mobile) */
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Esconde a barra de rolagem feia no Windows/Chrome */
+.CommentsCarousel::-webkit-scrollbar {
+  height: 8px;
+}
+.CommentsCarousel::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 4px;
+}
+
+.CommentCard {
+  background-color: #fff;
+  border: 1px solid #eee;
+  padding: 15px;
+  border-radius: 8px;
+  /* Largura fixa para os cards no carrossel */
+  flex: 0 0 280px; 
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+}
+
+.CommentHeader {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #f0f0f0;
+  padding-bottom: 5px;
+}
+
+.CommentCard.positive { border-top: 4px solid #28a745; }
+.CommentCard.negative { border-top: 4px solid #dc3545; }
+.CommentCard.neutral { border-top: 4px solid #ffc107; }

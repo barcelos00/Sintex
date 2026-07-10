@@ -1,0 +1,148 @@
+.LoginContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 85vh; /* Ajusta para dar espaço ao menu superior se necessário */
+  background-color: #0f0f0f ; /* Fundo escuro igual ao do projeto */
+  padding: 20px;
+  cursor: pointer;
+}
+
+.LoginForm {
+  background-color: #111622; /* Card um pouco mais claro que o fundo */
+  border: 1px solid #ff4500; /* Borda sutil em tom laranja/vermelho */
+  border-radius: 8px;
+  padding: 40px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.LoginLogoBox {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  margin-bottom: 20px;
+  gap: -160px;
+}
+
+.LoginLogo {
+  height: 50px;
+}
+
+.LoginForm h2 {
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 1.5rem;
+}
+
+.InputGroup {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.InputGroup label {
+  color: #ffffff;
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+}
+
+.InputGroup input {
+  padding: 12px;
+  border-radius: 4px;
+  border: 1px solid #30363d;
+  background-color: #0d1117;
+  color: #ffffff;
+  font-size: 1rem;
+  transition: border-color 0.2s;
+}
+
+/* Quando o usuário clica no input, acende em laranja */
+.InputGroup input:focus {
+  outline: none;
+  border-color: #ff7300; 
+}
+
+/* Botão principal em Laranja/Vermelho */
+.LoginButton {
+  width: 100%;
+  padding: 12px;
+  background-color: #ff5500;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.LoginButton:hover {
+  background-color: #cc3300; /* Tom mais puxado para o vermelho no hover */
+}
+
+.LoginFooter {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+  font-size: 0.85rem;
+  color: #ffffff;
+}
+
+.LoginMessage {
+  margin-top: 16px;
+  padding: 12px;
+  border-radius: 6px;
+  background-color: rgba(255, 87, 34, 0.12);
+  color: #ffb49a;
+  border: 1px solid rgba(255, 87, 34, 0.2);
+  text-align: center;
+}
+
+.LoginFooter a:hover {
+  color: #ff7300;
+}
+
+.LoginFooter .HighlightLink {
+  color: #ff7300;
+  font-weight: bold;
+  background: none;
+ 
+}
+.BackLink{
+  color: #ffffff;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  border: 2px solid #ff7300;
+  background-color: #ff7300;
+  border-radius: 50%;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  
+}
+
+.BackLink:hover {
+  transform: translateX(-2px);
+  background-color: #F21F26;
+  border-color: #F21F26;
+}
+
+.BackLink img {
+  width: 18px;
+}
+
+.BackLinkBox{
+  display: flex;
+  justify-content:  start;
+  align-items: start;
+  gap: 90px;
+  margin-bottom: 14px;
+}

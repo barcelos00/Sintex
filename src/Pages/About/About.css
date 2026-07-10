@@ -1,0 +1,163 @@
+/* ─── Layout base ─────────────────────────────────────────── */
+.container-sobre {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 5rem;
+  color: #1a1a1a;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* ─── Hero ────────────────────────────────────────────────── */
+.hero-sobre {
+  text-align: center;
+  padding: 4rem 0 3.5rem;
+  border-bottom: 1px solid #e31e1e;
+  margin-bottom: 2.5rem;
+}
+
+.hero-etiqueta {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #6b6b6b;
+  margin-bottom: 1rem;
+}
+
+.hero-titulo {
+  font-size: clamp(3rem, 8vw, 5.5rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  color: #0f0f0f;
+  margin-bottom: 1rem;
+}
+
+.hero-subtitulo {
+  font-size: 1.125rem;
+  color: #666;
+}
+
+/* ─── Introdução ─────────────────────────────────────────── */
+.introducao-sobre {
+  max-width: 600px;
+  margin: 0 auto 3.5rem;
+  text-align: center;
+}
+
+.introducao-sobre p {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: #444;
+}
+
+.introducao-sobre strong {
+  color: #0f0f0f;
+}
+
+/* ─── Pilares ────────────────────────────────────────────── */
+.secao-pilares {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1px;
+  background: #e8e8e8;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 4rem;
+}
+
+.cartao-pilar {
+  background: #fff;
+  padding: 1.75rem 1.5rem;
+}
+
+.titulo-pilar {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #999;
+  margin-bottom: 0.75rem;
+}
+
+.texto-pilar {
+  font-size: 0.95rem;
+  color: #444;
+}
+
+/* ─── Desenvolvedores ────────────────────────────────────── */
+.grade-desenvolvedores {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.cartao-desenvolvedor {
+  background: #fff;
+  border: 1px solid #e8e8e8;
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: all 0.2s ease;
+}
+
+.cartao-desenvolvedor:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  transform: translateY(-2px);
+}
+
+.avatar-desenvolvedor {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.avatar-desenvolvedor-fallback {
+  display: none;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #eee;
+  color: #666;
+  font-weight: 600;
+  align-items: center;
+  justify-content: center;
+}
+
+.nome-desenvolvedor {
+  font-weight: 600;
+  margin-top: 0.75rem;
+}
+
+.cargo-desenvolvedor {
+  font-size: 0.85rem;
+  color: #888;
+}
+
+.redes-sociais-dev {
+  display: flex;
+  gap: 6px;
+  margin-top: 1rem;
+}
+
+.redes-sociais-dev a {
+  font-size: 0.7rem;
+  padding: 0.4rem 0.7rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  text-decoration: none;
+  color: #666;
+}
+
+.redes-sociais-dev a:hover {
+  background: #0f0f0f;
+  color: #fff;
+}
+
+/* ─── Responsivo ─────────────────────────────────────────── */
+@media (max-width: 600px) {
+  .grade-desenvolvedores {
+    grid-template-columns: 1fr;
+  }
+}

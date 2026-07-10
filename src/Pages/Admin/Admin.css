@@ -1,0 +1,679 @@
+.AdminPage {
+  padding: 24px;
+  display: grid;
+  gap: 24px;
+  background: var(--surface-strong);
+  min-height: calc(100vh - 80px);
+}
+
+/* ===========================
+   HEADER
+=========================== */
+
+.AdminHeader {
+  background: linear-gradient(
+    135deg,
+    #0f766e,
+    #14b8a6
+  );
+  border-radius: 24px;
+  padding: 32px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.08);
+}
+
+.AdminHeader h1,
+.AdminHeader p {
+  color: white;
+}
+
+.AdminHeader h1 {
+  margin: 0 0 10px;
+}
+
+.AdminHeader p {
+  margin: 0;
+  font-size: 1rem;
+}
+
+/* ===========================
+   CARD PRINCIPAL
+=========================== */
+
+.AdminCard {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 24px;
+  padding: 28px;
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.08),
+    0 2px 8px rgba(0,0,0,0.04);
+  transition: 0.3s;
+}
+
+.AdminCard:hover {
+  transform: translateY(-3px);
+}
+
+.AdminCard h2 {
+  margin: 0 0 16px;
+  color: #0f172a;
+}
+
+/* ===========================
+   ESTATÍSTICAS
+=========================== */
+
+.StatsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+.StatCard {
+  background: white;
+  border-radius: 22px;
+  padding: 22px;
+  text-align: center;
+  box-shadow: 0 10px 20px rgba(0,0,0,.08);
+}
+
+.StatCard h2 {
+  margin: 0;
+  font-size: 2rem;
+  color: #0f766e;
+}
+
+.StatCard p {
+  margin-top: 8px;
+  color: #64748b;
+}
+
+/* ===========================
+   METADADOS
+=========================== */
+
+.RestaurantMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 22px;
+  color: #64748b;
+}
+
+.Rating {
+  font-weight: 700;
+  color: #10b981;
+}
+
+/* ===========================
+   PONTOS POSITIVOS E NEGATIVOS
+=========================== */
+
+.PointsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin-bottom: 22px;
+}
+
+.PointsColumn {
+  border-radius: 20px;
+  padding: 20px;
+  line-height: 1.7;
+}
+
+.PointsColumn.positive {
+  background: linear-gradient(
+    135deg,
+    #ecfdf5,
+    #d1fae5
+  );
+  border: 1px solid #10b981;
+}
+
+.PointsColumn.negative {
+  background: linear-gradient(
+    135deg,
+    #fef2f2,
+    #fee2e2
+  );
+  border: 1px solid #ef4444;
+}
+
+.PointsColumn h3 {
+  margin-top: 0;
+  margin-bottom: 12px;
+  color: #0f172a;
+}
+
+.PointsColumn ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+/* ===========================
+   DESCRIÇÃO
+=========================== */
+
+.Description {
+  margin: 0 0 20px;
+  color: #334155;
+  line-height: 1.7;
+}
+
+/* ===========================
+   SELETOR DE RESTAURANTE
+=========================== */
+
+.RestaurantSelect {
+  margin-bottom: 24px;
+  display: grid;
+  gap: 10px;
+}
+
+.RestaurantSelect label {
+  color: #334155;
+  font-weight: 700;
+}
+
+.RestaurantSelect select {
+  width: 100%;
+  max-width: 400px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  border: 1px solid #cbd5e1;
+  background: #f8fafc;
+  color: #0f172a;
+}
+
+/* ===========================
+   FEEDBACK
+=========================== */
+
+.FeedbackSection {
+  margin-top: 22px;
+}
+
+.FeedbackSection h3 {
+  margin: 0 0 14px;
+  color: #0f172a;
+}
+
+.FeedbackSection ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 12px;
+}
+
+.FeedbackSection li {
+  padding: 16px;
+  border-radius: 16px;
+  background: #f8fafc;
+  border: 1px solid #cbd5e1;
+  color: #334155;
+}
+
+.FeedbackSection li strong {
+  color: #0f172a;
+}
+
+.FeedbackSection li span {
+  color: #475569;
+  font-size: 0.95rem;
+}
+
+/* ===========================
+   FILTROS
+=========================== */
+
+.FeedbackFilter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.FilterBtn {
+  border: none;
+  border-radius: 999px;
+  padding: 10px 18px;
+  background: #f0f4f8;
+  color: #334155;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.16s ease;
+}
+
+.FilterBtn:hover {
+  transform: translateY(-2px);
+}
+
+.FilterBtn.active {
+  background: #0f766e;
+  color: white;
+}
+
+.FilterBtn.positive {
+  color: #059669;
+}
+
+.FilterBtn.positive.active {
+  background: #059669;
+  color: white;
+}
+
+.FilterBtn.negative {
+  color: #dc2626;
+}
+
+.FilterBtn.negative.active {
+  background: #dc2626;
+  color: white;
+}
+
+/* ===========================
+   COMENTÁRIOS
+=========================== */
+
+.CommentsList {
+  display: grid;
+  gap: 14px;
+}
+
+.CommentCard {
+  padding: 18px;
+  border-radius: 18px;
+  background: white;
+  border: 1px solid #cbd5e1;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: 0.2s;
+}
+
+.CommentCard:hover {
+  transform: translateY(-2px);
+}
+
+.CommentCard.positive {
+  border-left: 5px solid #10b981;
+  background: #ecfdf5;
+}
+
+.CommentCard.negative {
+  border-left: 5px solid #ef4444;
+  background: #fef2f2;
+}
+
+.CommentCard.neutral {
+  border-left: 5px solid #94a3b8;
+}
+
+.CommentHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.CommentHeader strong {
+  color: #0f172a;
+}
+
+.CommentTime {
+  font-size: 0.85rem;
+  color: #94a3b8;
+}
+
+.CommentText {
+  margin: 0;
+  color: #334155;
+  line-height: 1.6;
+}
+
+.NoComments {
+  text-align: center;
+  color: #94a3b8;
+  padding: 20px;
+  margin: 0;
+}
+
+/* ===========================
+   CURTIDAS
+=========================== */
+
+.LikesSection {
+  margin-top: 22px;
+  padding: 18px;
+  background: #f0fdf4;
+  border-radius: 18px;
+  border: 1px solid #bbf7d0;
+}
+
+.LikesSection h3 {
+  margin: 0 0 10px;
+  color: #0f172a;
+}
+
+.LikesList {
+  margin: 0;
+  color: #334155;
+}
+
+.NoLikes {
+  margin: 0;
+  color: #94a3b8;
+}
+
+/* ===========================
+   FORMULÁRIOS
+=========================== */
+
+.RestaurantLinkSection,
+.MenuSectionHeader,
+.MenuItemActions {
+  display: grid;
+  gap: 10px;
+}
+
+.RestaurantLinkSection {
+  margin-bottom: 24px;
+}
+
+.RestaurantLinkSection label,
+.MenuItem label {
+  display: block;
+  font-weight: 700;
+  color: #334155;
+  margin-bottom: 8px;
+}
+
+.TextInput,
+.TextArea {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 14px;
+  border: 1px solid #cbd5e1;
+  background: white;
+  color: #0f172a;
+}
+
+.TextInput:focus,
+.TextArea:focus {
+  outline: none;
+  border-color: #0f766e;
+  box-shadow: 0 0 0 3px rgba(15,118,110,.15);
+}
+
+/* ===========================
+   CARDÁPIO
+=========================== */
+
+.MenuSection {
+  background: #f8fafc;
+  border-radius: 20px;
+  padding: 20px;
+}
+
+.MenuSection h3 {
+  margin-top: 0;
+  color: #0f172a;
+}
+
+.MenuSection ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 12px;
+}
+
+.MenuSection li {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px;
+  border-radius: 14px;
+  background: white;
+  border: 1px solid #e2e8f0;
+}
+
+.MenuSection li span:first-child {
+  font-weight: 600;
+}
+
+.MenuSectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.MenuItem {
+  padding: 18px;
+  border-radius: 20px;
+  background: white;
+  border: 1px solid #e2e8f0;
+  margin-bottom: 16px;
+}
+
+.MenuItemRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.MenuItemActions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* ===========================
+   BOTÕES
+=========================== */
+
+.MenuActionBtn,
+.AddMenuBtn,
+.SaveButton,
+.LinkButton,
+.LogoutButton,
+.PrimaryButton {
+  border: none;
+  border-radius: 999px;
+  padding: 10px 18px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all .2s ease;
+}
+
+.AddMenuBtn,
+.SaveButton,
+.LogoutButton {
+  background: linear-gradient(
+    135deg,
+    #0f766e,
+    #14b8a6
+  );
+  color: white;
+  box-shadow: 0 6px 14px rgba(15,118,110,.25);
+}
+
+.MenuActionBtn {
+  background: #e2e8f0;
+  color: #1f2937;
+}
+
+.MenuActionBtn.danger {
+  background: #ef4444;
+  color: white;
+}
+
+.LinkButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #0f766e;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.LinkButton:hover,
+.AddMenuBtn:hover,
+.SaveButton:hover,
+.MenuActionBtn:hover,
+.LogoutButton:hover {
+  transform: translateY(-2px);
+}
+
+/* ===========================
+   RESPONSIVO
+=========================== */
+
+@media (max-width: 768px) {
+  .PointsGrid,
+  .MenuItemRow {
+    grid-template-columns: 1fr;
+  }
+
+  .MenuSectionHeader {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .CommentHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+}
+
+/* Header actions positioning */
+.AdminHeader {
+  position: relative;
+}
+
+.AdminHeaderActions {
+  position: absolute;
+  right: 28px;
+  top: 28px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+@media (max-width: 880px) {
+  .AdminHeaderActions {
+    position: static;
+    margin-top: 16px;
+    justify-content: flex-start;
+  }
+}
+
+/* Editor action buttons alignment */
+.EditorActions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .EditorActions { justify-content: stretch; }
+  .EditorActions button { flex: 1 1 100%; }
+}
+
+/* =========================================================
+   DASHBOARD E CARROSSEL DE FEEDBACKS
+   ========================================================= */
+
+/* Grid do Dashboard (Admin) */
+.DashboardGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.DashCard {
+  background-color: #f8f9fa;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+  border-left: 4px solid #ccc;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.DashCard h4 {
+  margin: 0 0 10px 0;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.DashValue {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.DashCard.positive { border-left-color: #28a745; }
+.DashCard.negative { border-left-color: #dc3545; }
+
+/* O Carrossel CSS Nativo */
+.CommentsCarousel {
+  display: flex;
+  overflow-x: auto;
+  gap: 15px;
+  padding-bottom: 15px;
+  margin-top: 15px;
+  /* Isso faz o scroll parar certinho no card (efeito carrossel mobile) */
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Esconde a barra de rolagem feia no Windows/Chrome */
+.CommentsCarousel::-webkit-scrollbar {
+  height: 8px;
+}
+.CommentsCarousel::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 4px;
+}
+
+.CommentCard {
+  background-color: #fff;
+  border: 1px solid #eee;
+  padding: 15px;
+  border-radius: 8px;
+  /* Largura fixa para os cards no carrossel */
+  flex: 0 0 280px; 
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+}
+
+.CommentHeader {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #f0f0f0;
+  padding-bottom: 5px;
+}
+/* Se quiser estilizar diretamente pela classe, adicione uma class="AdminPreviewImg" na tag img, ou use assim: */
+.RestaurantLinkSection img {
+  width: 100%;            /* Se quiser que ela ocupe toda a largura da seção */
+  max-width: 300px;       /* Ou um limite máximo para não ficar gigante na tela */
+  height: 180px;          /* ALTURA FIXA para o painel */
+  object-fit: cover;      /* MÁGICA AQUI: Faz a tag <img> se comportar como o background-size */
+  object-position: center;/* Mantém o foco no centro da imagem */
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.CommentCard.positive { border-top: 4px solid #28a745; }
+.CommentCard.negative { border-top: 4px solid #dc3545; }
+.CommentCard.neutral { border-top: 4px solid #ffc107; }
