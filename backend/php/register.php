@@ -17,7 +17,8 @@ include "db.php";
 $data = json_decode(file_get_contents("php://input"), true);
 
 if (!isset($data["email"]) || !isset($data["password"]) || !isset($data["restaurant"])) {
-    echo json_encode(["success" => false, "message" => "Dados incompletos. Preencha todos os campos."]);
+    http_response_code(400);
+    echo json_encode(["success" => false, "status" => "invalid_data", "message" => "Dados incompletos. Preencha todos os campos."]);
     exit;
 }
 
@@ -26,7 +27,8 @@ $senhaCriptografada = password_hash($data["password"], PASSWORD_DEFAULT);
 $restaurante = trim($data["restaurant"]); // Nome do administrador/restaurante
 
 if ($email === "" || $restaurante === "") {
-    echo json_encode(["success" => false, "message" => "E-mail e restaurante são obrigatórios."]);
+    http_response_code(400);
+    echo json_encode(["success" => false, "status" => "missing_fields", "message" => "E-mail e restaurante são obrigatórios."]);
     exit;
 }
 
@@ -36,7 +38,8 @@ $stmt = $conn->prepare($sql);
 $stmt->bind_param("s", $email);
 $stmt->execute();
 if ($stmt->get_result()->num_rows > 0) {
-    echo json_encode(["success" => false, "message" => "Este e-mail já está cadastrado."]);
+    http_response_code(409);
+    echo json_encode(["success" => false, "status" => "admin_already_exists", "message" => "Este e-mail já está cadastrado."]);
     exit;
 }
 
@@ -46,7 +49,8 @@ $stmtRest = $conn->prepare($sqlRest);
 $stmtRest->bind_param("s", $restaurante);
 $stmtRest->execute();
 if ($stmtRest->get_result()->num_rows > 0) {
-    echo json_encode(["success" => false, "message" => "Este restaurante já está cadastrado."]);
+    http_response_code(409);
+    echo json_encode(["success" => false, "status" => "restaurant_already_exists", "message" => "Este restaurante já está cadastrado."]);
     exit;
 }
 

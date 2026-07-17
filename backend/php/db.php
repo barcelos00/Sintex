@@ -12,3 +12,4 @@ if ($conn->connect_error) {
     header('Content-Type: application/json');
     die(json_encode(["sucesso" => false, "mensagem" => "Erro na conexão: " . $conn->connect_error]));
 }
+?>

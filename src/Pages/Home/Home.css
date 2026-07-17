@@ -325,6 +325,17 @@
   }
 }
 
+@media (max-width: 480px) {
+  .ClientPage { padding: 12px; }
+  .ClientHeader { padding: 16px; border-radius: 14px; }
+  .ClientHeader h1 { font-size: 1.25rem; }
+  .ClientCardHeader { height: 160px; }
+  .HeaderContent { padding: 12px; }
+  .HeaderInfo h2 { font-size: 1.05rem; }
+  .FavoriteBtn { width: 40px; height: 40px; right: 10px; bottom: 10px; }
+  .CommentCard { flex: 0 0 240px; }
+}
+
 
 
 

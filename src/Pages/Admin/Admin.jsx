@@ -42,7 +42,7 @@ export default function Admin() {
       }
 
       try {
-        const response = await fetch(`http://localhost/Sintex-main/backend/api/restaurants.php?admin_id=${adminId}`);
+        const response = await fetch(`/Pi_Final/Sintex/backend/api/restaurants.php?admin_id=${adminId}`);
         
         if (response.ok) {
           const result = await response.json();
@@ -129,7 +129,7 @@ export default function Admin() {
     console.log('Enviando PUT para salvar restaurante', { id: updatedRestaurant.id, adminId, payload });
 
     try {
-      const url = `http://localhost/Sintex-main/backend/api/restaurants.php?id=${encodeURIComponent(updatedRestaurant.id)}&admin_id=${encodeURIComponent(adminId)}`;
+      const url = `/Pi_Final/Sintex/backend/api/restaurants.php?id=${encodeURIComponent(updatedRestaurant.id)}&admin_id=${encodeURIComponent(adminId)}`;
       const response = await fetch(url, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
@@ -171,7 +171,7 @@ export default function Admin() {
     console.log('Iniciando exclusão do restaurante', { restaurantId, adminId });
 
     try {
-      const url = `http://localhost/Sintex-main/backend/api/restaurants.php?id=${encodeURIComponent(restaurantId)}&admin_id=${encodeURIComponent(adminId)}`;
+      const url = `/Pi_Final/Sintex/backend/api/restaurants.php?id=${encodeURIComponent(restaurantId)}&admin_id=${encodeURIComponent(adminId)}`;
       const response = await fetch(url, { method: "DELETE" });
 
       if (!response.ok) {
@@ -310,7 +310,7 @@ export default function Admin() {
 
                 try {
                   console.log('Enviando novo restaurante', { adminId, payload: newRestaurant });
-                  const response = await fetch(`http://localhost/Sintex-main/backend/api/restaurants.php?admin_id=${adminId}`, {
+                  const response = await fetch(`/Pi_Final/Sintex/backend/api/restaurants.php?admin_id=${adminId}`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({

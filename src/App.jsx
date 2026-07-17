@@ -9,7 +9,7 @@ import PaginaDeErro from "./PaginaDeErro/paginaderro";
 import ScrollToTop from "./Pages/ScrollToTop/ScrollToTop";
 import Login from "./Componentes/Login/Login";
 import RegisterAdmin from "./Componentes/Login/RegisterAdmin";
-import Favorita from "./Pages/favoritos/Favoritos";
+import Favorita from "./Pages/Favoritos/Favoritos";
 
 export default function App() {
   return (

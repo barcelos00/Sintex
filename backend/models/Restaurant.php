@@ -135,18 +135,18 @@ class Restaurant
             // Inicia a transação
             $this->pdo->beginTransaction();
 
-            // 1. Atualiza TODOS os dados básicos do Restaurante (agora incluindo cidade/estado)
+            // 1. Atualiza TODOS os dados básicos do Restaurante
             $sqlUpd = "UPDATE restaurantes SET nome = ?, categoria = ?, descricao = ?, endereco = ?, cidade = ?, estado = ?, telefone = ?, foto_url = ? WHERE id = ?";
             $stmtUpd = $this->pdo->prepare($sqlUpd);
             $stmtUpd->execute([
-                $dados['nome'] ?? 'Restaurante Sem Nome',
-                $dados['categoria'] ?? null,
-                $dados['descricao'] ?? null,
-                $dados['endereco'] ?? null,
+                $dados['nome'] ?? $dados['name'] ?? 'Restaurante Sem Nome',
+                $dados['categoria'] ?? $dados['category'] ?? null,
+                $dados['descricao'] ?? $dados['description'] ?? null,
+                $dados['endereco'] ?? $dados['address'] ?? null,
                 $dados['cidade'] ?? $dados['city'] ?? null,
                 $dados['estado'] ?? $dados['state'] ?? null,
-                $dados['telefone'] ?? null,
-                $dados['foto'] ?? null,
+                $dados['telefone'] ?? $dados['phone'] ?? null,
+                $dados['foto'] ?? $dados['cover_image_url'] ?? $dados['image'] ?? null,
                 $id
             ]);
 
@@ -188,8 +188,7 @@ class Restaurant
     public function criar($user_id, $dados)
     {
         try {
-            // Insere o restaurante
-            // Agora armazenamos também cidade e estado (aceitamos 'cidade'/'estado' ou 'city'/'state')
+            // Insere o restaurante com os nomes de coluna corretos
             $sql = "INSERT INTO restaurantes (nome, endereco, telefone, email, cidade, estado) VALUES (?, ?, ?, ?, ?, ?)";
             $stmt = $this->pdo->prepare($sql);
 

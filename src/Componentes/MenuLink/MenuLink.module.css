@@ -20,3 +20,7 @@
     text-decoration: dotted;
     color: var(--primary-dark);
 }
+
+@media (max-width: 480px) {
+  .active { padding: 8px 12px; font-size: 0.95rem; }
+}

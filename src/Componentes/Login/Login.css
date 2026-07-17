@@ -146,3 +146,20 @@
   gap: 90px;
   margin-bottom: 14px;
 }
+
+@media (max-width: 480px) {
+  .LoginContainer {
+    padding: 12px;
+    min-height: 75vh;
+  }
+
+  .LoginForm {
+    padding: 20px;
+    max-width: 100%;
+    border-radius: 10px;
+  }
+
+  .LoginForm h2 { font-size: 1.2rem; }
+
+  .BackLinkBox { gap: 12px; margin-bottom: 10px; }
+}

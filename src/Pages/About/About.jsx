@@ -11,7 +11,7 @@ const desenvolvedores = [
     profile: 'https://github.com/barcelos00',
     initials: 'VB',
     social: {
-      linkedin: 'https://www.linkedin.com/in/victor-barcelos-1381ba17b',
+      linkedin: 'https://www.linkedin.com/in/victor-santos-barcelos-1381ba17b/',
       instagram: 'https://www.instagram.com/barcelos_9/',
     },
   },

@@ -2,16 +2,14 @@
 .banner-container {
     width: 100%;
     max-width: 2000px;
-    
-    /* A MÁGICA DEFINITIVA: Usando 'height' em vez de 'min-height' 
-       Isso obriga o banner a ter exatamente esse tamanho, sem esticar. */
-    height: clamp(390px, 45vh, 480px); 
-    
+    /* Tornar o banner fluido: usar min-height para permitir colapsar em telas pequenas */
+    min-height: clamp(320px, 40vh, 480px);
     margin: 0 auto;
     background-color: #0d0d0d;
     display: flex;
     align-items: center;
     justify-content: flex-start;
+    gap: 2rem;
     padding: clamp(20px, 4vw, 40px) clamp(20px, 5vw, 60px);
     overflow: hidden;
     position: relative;
@@ -105,6 +103,7 @@
     height: 100%;
     z-index: 0;
     overflow: hidden; /* Isso corta qualquer sobra automaticamente */
+    transition: width 240ms ease, opacity 200ms ease;
 }
 
 /* O Vídeo - Configuração Infalível */
@@ -117,10 +116,56 @@
     object-position: right center; 
     display: block;
     border-radius: 0;
-    
-    /* REMOVIDO: transform: scale(...) 
-       Não usaremos zoom aqui para não distorcer. 
-       O 'object-fit: cover' já fará o trabalho de preenchimento. */
+}
+
+/* Breakpoints: reduzir / mover o vídeo para telas menores */
+@media (max-width: 1024px) {
+    .banner-video-wrapper { width: 50%; }
+}
+
+@media (max-width: 768px) {
+    .banner-container {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 18px;
+        min-height: auto;
+    }
+
+    .banner-content {
+        max-width: 100%;
+        padding: 8px 6px;
+        order: 1;
+    }
+
+    .banner-video-wrapper {
+        position: static;
+        width: 100%;
+        height: auto;
+        order: 2;
+        margin-top: 12px;
+        opacity: 1;
+    }
+
+    .food-animated-video {
+        width: 100%;
+        height: auto;
+        max-height: 320px;
+        object-position: center center;
+    }
+
+    .btn-pedir { padding: 12px 28px; }
+}
+
+@media (max-width: 480px) {
+    /* Em telefones muito pequenos escondemos o vídeo para economizar banda/CPU */
+    .banner-video-wrapper { display: none; }
+
+    .banner-container { padding: 12px; }
+    .banner-content h1 { font-size: clamp(1.5rem, 6vw, 2.4rem); }
+    .banner-content p { font-size: 0.95rem; }
+    .banner-badge { padding: 5px 12px; font-size: 0.75rem; }
 }
 
 /* Animação de entrada */
