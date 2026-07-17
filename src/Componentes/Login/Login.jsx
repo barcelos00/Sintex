@@ -17,7 +17,7 @@ export default function Login() {
 
     try {
       // O link absoluto correto apontando para a pasta Pi_FinalSintex
-      const resposta = await fetch("http://localhost/Sintex/backend/php/login.php", {
+      const resposta = await fetch("http://sintex.infinityfree.me/backend/php/login.php", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password: senha }), 

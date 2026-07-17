@@ -1,12 +1,10 @@
 <?php
-$host = "127.0.0.1";
-$user = "root";
-$password = "";
-$database = "sintex_db";
-$port = 3306; // A PORTA SECRETA DO SENAC AQUI!
+$host = "sql309.infinityfree.com";
+$usuario = "if0_42388559";
+$senha = "SUA_SENHA_DA_INFINITYFREE"; // coloque a sua senha real aqui
+$banco = "if0_42388559_sintex_db";
 
-// Adicionamos a variável $port no final
-$conn = new mysqli($host, $user, $password, $database, $port);
+$conn = new mysqli($host, $usuario, $senha, $banco);
 
 if ($conn->connect_error) {
     header('Content-Type: application/json');
