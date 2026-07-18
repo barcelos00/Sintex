@@ -2,7 +2,7 @@
 $DB_HOST = 'sql309.infinityfree.com';
 $DB_PORT = '3306';
 $DB_USER = 'if0_42388559';
-$DB_PASS = 'layanne2026*';
+$DB_PASS = 'layanne2026';
 $DB_NAME = 'if0_42388559_sintex_db';
 
 try {

@@ -1,10 +1,11 @@
 <?php
-$host = "sql309.infinityfree.com";
-$usuario = "if0_42388559";
-$senha = "layanne2026"; // coloque a sua senha real aqui
-$banco = "if0_42388559_sintex_db";
+$DB_HOST = 'sql309.infinityfree.com';
+$DB_PORT = '3306';
+$DB_USER = 'if0_42388559';
+$DB_PASS = 'layanne2026';
+$DB_NAME = 'if0_42388559_sintex_db';
 
-$conn = new mysqli($host, $usuario, $senha, $banco);
+$conn = new mysqli($DB_HOST, $DB_USER, $DB_PASS, $DB_NAME, $DB_PORT);
 
 if ($conn->connect_error) {
     header('Content-Type: application/json');
