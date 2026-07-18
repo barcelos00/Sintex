@@ -1,7 +1,16 @@
+# 🌍 Acesso ao Projeto Online
+
+O projeto já está hospedado e pode ser acessado diretamente através da URL:
+
+**[http://sintex.infinityfree.me](http://sintex.infinityfree.me)**
+
+---
+
 # Mantem o projeto em apenas uma pasta 
 
 sem pasta dentro de pastas por favor 
 
+---
 
 # 🚀 Configuração do Banco de Dados e Login de Administrador - Sintex
 
