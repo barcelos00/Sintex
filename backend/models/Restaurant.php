@@ -136,7 +136,7 @@ class Restaurant
             $this->pdo->beginTransaction();
 
             // 1. Atualiza TODOS os dados básicos do Restaurante
-            $sqlUpd = "UPDATE restaurantes SET nome = ?, categoria = ?, descricao = ?, endereco = ?, cidade = ?, estado = ?, telefone = ?, foto_url = ? WHERE id = ?";
+            $sqlUpd = "UPDATE restaurantes SET nome = ?, categoria = ?, descricao = ?, endereco = ?, cidade = ?, estado_uf = ?, telefone = ?, foto_url = ? WHERE id = ?";
             $stmtUpd = $this->pdo->prepare($sqlUpd);
             $stmtUpd->execute([
                 $dados['nome'] ?? $dados['name'] ?? 'Restaurante Sem Nome',
@@ -189,7 +189,7 @@ class Restaurant
     {
         try {
             // Insere o restaurante com os nomes de coluna corretos
-            $sql = "INSERT INTO restaurantes (nome, endereco, telefone, email, cidade, estado) VALUES (?, ?, ?, ?, ?, ?)";
+            $sql = "INSERT INTO restaurantes (nome, endereco, telefone, email, cidade, estado_uf) VALUES (?, ?, ?, ?, ?, ?)";
             $stmt = $this->pdo->prepare($sql);
 
             $stmt->execute([
