@@ -1,12 +1,11 @@
 <?php
-$host = "127.0.0.1";
-$user = "root";
-$password = "";
-$database = "sintex_db";
-$port = 3306; // A PORTA SECRETA DO SENAC AQUI!
+$DB_HOST = 'sql309.infinityfree.com';
+$DB_PORT = '3306';
+$DB_USER = 'if0_42388559';
+$DB_PASS = 'layanne2026';
+$DB_NAME = 'if0_42388559_sintex_db';
 
-// Adicionamos a variável $port no final
-$conn = new mysqli($host, $user, $password, $database, $port);
+$conn = new mysqli($DB_HOST, $DB_USER, $DB_PASS, $DB_NAME, $DB_PORT);
 
 if ($conn->connect_error) {
     header('Content-Type: application/json');

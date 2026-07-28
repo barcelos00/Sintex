@@ -1,12 +1,11 @@
 <?php
-$DB_HOST = '127.0.0.1';
-$DB_PORT = '3306';      // A PORTA SECRETA DO SENAC AQUI!
-$DB_USER = 'root';
-$DB_PASS = '';
-$DB_NAME = 'sintex_db';
+$DB_HOST = 'sql309.infinityfree.com';
+$DB_PORT = '3306';
+$DB_USER = 'if0_42388559';
+$DB_PASS = 'layanne2026';
+$DB_NAME = 'if0_42388559_sintex_db';
 
 try {
-    // Repare que adicionei ;port=$DB_PORT aqui na linha abaixo
     $pdo = new PDO(
         "mysql:host=$DB_HOST;port=$DB_PORT;dbname=$DB_NAME;charset=utf8mb4",
         $DB_USER,

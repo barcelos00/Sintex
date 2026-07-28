@@ -24,7 +24,7 @@ export default function RegisterAdmin() {
 
     try {
       // O link absoluto correto apontando para a pasta Pi_FinalSintex
-      const response = await fetch("http://localhost/Sintex/backend/php/register.php", {
+      const response = await fetch("https://sintex.infinityfree.me/backend/php/register.php", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

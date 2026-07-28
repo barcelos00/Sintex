@@ -28,7 +28,7 @@ export default function Home() {
       try {
         // CORREÇÃO 1: Caminho absoluto apontando para o XAMPP
         const response = await fetch(
-          "http://localhost/Sintex/backend/api/restaurants.php"
+          "https://sintex.infinityfree.me/backend/api/restaurants.php"
         );
 
         if (response.ok) {
@@ -113,7 +113,7 @@ export default function Home() {
     try {
       // CORREÇÃO 2: Caminho absoluto limpo e correto
       const response = await fetch(
-        "http://localhost/Sintex/backend/api/feedbacks.php",
+        "https://sintex.infinityfree.me/backend/api/feedbacks.php",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
