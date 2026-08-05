@@ -3,6 +3,7 @@
 O **Sintex** é um sistema de gerenciamento de restaurantes desenvolvido como projeto integrador para o curso Técnico em Programador Web do SENAC DF. A plataforma permite que administradores gerenciem dados de seus estabelecimentos (como cardápios e avaliações) e que clientes visualizem informações de forma centralizada.
 
 A aplicação utiliza uma arquitetura Full-Stack, combinando um front-end em React com um back-end em PHP e persistência em banco de dados MySQL.
+Link do projeto: https://sintex.infinityfree.me/
 
 ## 🚀 Tecnologias Utilizadas
 
